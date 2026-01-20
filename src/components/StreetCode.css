@@ -1,0 +1,184 @@
+/* #region StreetCode */
+.street-code {
+    margin: 0 auto;
+    padding: 3rem 0;
+    background-color: black;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../assets/driver.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.scheda-sx,
+.scheda-dx {
+    width: 45%;
+    margin-top: 20px;
+}
+
+.scheda-sx h3,
+.scheda-dx h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.scheda-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icona-scheda {
+    width: 100px;
+    height: 100px;
+    font-size: 6rem;
+}
+
+.testo-scheda {
+    width: 70%;
+    margin-left: 20px;
+}
+
+.testo-scheda h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 1270px) {
+    .icona-scheda {
+        width: 90px;
+        height: 90px;
+        font-size: 5.5rem;
+    }
+
+    .testo-scheda {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .street-code {
+        padding: 2.5rem 0;
+    }
+
+    .scheda-sx,
+    .scheda-dx {
+        width: 48%;
+    }
+
+    .icona-scheda {
+        width: 80px;
+        height: 80px;
+        font-size: 5rem;
+    }
+
+    .testo-scheda h3,
+    .scheda-sx h3,
+    .scheda-dx h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1081px) {
+    .icona-scheda {
+        width: 75px;
+        height: 75px;
+        font-size: 4.5rem;
+    }
+
+    .testo-scheda {
+        width: 70%;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .street-code {
+        padding: 2rem 0;
+    }
+
+    .scheda-sx,
+    .scheda-dx {
+        width: 100%;
+    }
+
+    .icona-scheda {
+        width: 70px;
+        height: 70px;
+        font-size: 4rem;
+    }
+
+    .testo-scheda h3,
+    .scheda-sx h3,
+    .scheda-dx h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .scheda-row {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .street-code {
+        padding: 1.5rem 0;
+    }
+
+    .scheda-row {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .icona-scheda {
+        width: 60px;
+        height: 60px;
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+    }
+
+    .testo-scheda {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .testo-scheda h3,
+    .scheda-sx h3,
+    .scheda-dx h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .street-code {
+        padding: 1rem 0;
+    }
+
+    .scheda-sx,
+    .scheda-dx {
+        margin-top: 15px;
+    }
+
+    .icona-scheda {
+        width: 50px;
+        height: 50px;
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .testo-scheda h3,
+    .scheda-sx h3,
+    .scheda-dx h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .scheda-row {
+        margin-bottom: 15px;
+    }
+}
+
+/* #endregion */

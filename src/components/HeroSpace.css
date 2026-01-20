@@ -1,0 +1,238 @@
+/* #region HeroSpace */
+.herospace {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--dark-red), var(--light-red));
+    box-shadow:
+        inset 0px 0 15px rgba(0, 0, 0, 0.6),
+        /* sinistra */
+        inset -0px 0 15px rgba(0, 0, 0, 0.6),
+        /* destra */
+        inset 0 -0px 15px rgba(0, 0, 0, 0.6);
+    /* sotto */
+}
+
+.herospace .hero-slogan {
+    width: 60%;
+}
+
+.herospace .slogan,
+.herospace .phrase,
+.herospace span,
+.herospace .small {
+    width: 60%;
+}
+
+.herospace .slogan {
+    font-size: 5rem;
+    line-height: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--s30-yel);
+    margin-bottom: 20px;
+}
+
+.herospace .phrase {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.herospace .small {
+    color: lightgray;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.herospace span {
+    display: block;
+    color: white;
+}
+
+.herospace .visual {
+    width: 40%;
+}
+
+.herospace .visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries */
+@media (max-width: 1270px) {
+    .herospace .slogan {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+    }
+
+    .herospace .phrase {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .herospace .hero-slogan {
+        width: 55%;
+    }
+
+    .herospace .visual {
+        width: 45%;
+    }
+
+    .herospace .slogan {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+
+    .herospace .phrase {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1081px) {
+    .herospace .slogan {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    .herospace .phrase {
+        font-size: 1.05rem;
+    }
+
+    .herospace .small {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .herospace {
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
+    .herospace .hero-slogan {
+        width: 90%;
+    }
+
+    .herospace .slogan,
+    .herospace .phrase,
+    .herospace span,
+    .herospace .small {
+        width: 100%;
+    }
+
+    .herospace .slogan {
+        font-size: 3rem;
+        line-height: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .herospace .phrase {
+        font-size: 1rem;
+    }
+
+    .herospace .visual {
+        width: 60%;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .herospace {
+        height: auto;
+        min-height: 100vh;
+        padding: 3rem 0;
+        align-items: flex-start;
+    }
+
+    .herospace .slogan {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    .herospace .phrase {
+        font-size: 0.95rem;
+    }
+
+    .herospace .small {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+
+    .herospace .visual {
+        width: 70%;
+    }
+}
+
+@media (max-width: 576px) {
+    .herospace {
+        padding: 2rem 0;
+    }
+
+    .herospace .hero-slogan {
+        width: 95%;
+    }
+
+    .herospace .slogan {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .herospace .phrase {
+        font-size: 0.9rem;
+    }
+
+    .herospace .small {
+        font-size: 0.75rem;
+        margin-top: 8px;
+        margin-bottom: 15px;
+    }
+
+    .herospace .visual {
+        width: 85%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .herospace {
+        text-align: center;
+        padding-top: 5rem;
+    }
+
+    .hero-wrapper {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .herospace .hero-slogan {
+        width: 100%;
+    }
+
+    .herospace .visual {
+        width: 60%;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .herospace .slogan {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+
+    .herospace .phrase {
+        font-size: 0.85rem;
+    }
+
+    .herospace .small {
+        font-size: 0.7rem;
+    }
+}
+
+/* #endregion */
