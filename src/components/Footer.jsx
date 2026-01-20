@@ -40,7 +40,7 @@ export default function Footer() {
                         <p><strong>Sede legale:</strong> Via Primo Maggio, 5/A - 31059 Zero Branco (TV)</p>
                         <p><strong>Sede operativa:</strong> Via Enzo Ferrari, 15 - 30037 Scorzè (VE)</p>
                         <p className="company-contacts-email">
-                            <a href="mailto:info@cortitech.it"><strong>Email:</strong> info@cortitech.it</a>
+                            <a href="mailto:info@sobrio30.com"><strong>Email:</strong> info@sobrio30.com</a>
                         </p>
                         <p className="company-contacts-phone">
                             <a href="tel:+393517093135"><strong>Telefono/Whatsapp:</strong> +39 3517093135</a>

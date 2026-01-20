@@ -33,25 +33,70 @@ export default function HomePage() {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const data = {
-            type: formType,
-            ...(formType === 'private' ? privateData : commercialData)
-        };
+        let data;
+
+        if (formType === 'private') {
+            data = {
+                type: formType,
+                ...privateData
+            };
+        } else {
+            // Per attività commerciali, mappiamo activityRepresentative a name
+            data = {
+                type: formType,
+                name: commercialData.activityRepresentative,
+                email: commercialData.email,
+                phone: commercialData.phone,
+                address: commercialData.address,
+                message: commercialData.message,
+                activityName: commercialData.activityName,
+                activityType: commercialData.activityType
+            };
+        }
+
+        console.log('Dati inviati:', data);
 
         try {
+            console.log('Inizio richiesta axios...');
             const response = await axios.post(
-                'http://localhost:5000/send-email',
+                'https://sobrio30-backend.onrender.com/send-email',
                 data,
                 { headers: { 'Content-Type': 'application/json' } }
             );
 
-            if (response.data.success) {
-                alert('Email inviata!');
+            console.log('Richiesta completata!');
+            console.log('Risposta backend:', response.data);
+            console.log('Status:', response.status);
+
+            // Status 204 = successo senza contenuto, oppure success: true
+            if (response.status === 204 || response.data?.success) {
+                alert('Email inviata con successo!');
+                // Reset del form
+                if (formType === 'private') {
+                    setPrivateData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        address: '',
+                        message: ''
+                    });
+                } else {
+                    setCommercialData({
+                        activityName: '',
+                        activityRepresentative: '',
+                        activityType: '',
+                        email: '',
+                        phone: '',
+                        address: '',
+                        message: ''
+                    });
+                }
             } else {
                 alert('Errore: ' + response.data.error);
             }
 
         } catch (err) {
+            console.error('Errore completo:', err);
             if (err.response) {
                 // Errore dal server
                 alert('Errore server: ' + err.response.data.error);

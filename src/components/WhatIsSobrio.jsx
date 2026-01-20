@@ -10,9 +10,10 @@ export default function WhatIsSobrio() {
 
                     <h2 className="section-title">Cose'è Sobrio30?</h2>
                     <p className="section-desc">
-                        Sobrio30 è un integratore funzionale a base naturale,
-                        non un medicinale. Una sapiente miscela di estratti vegetali
-                        in un pratico stick da bere
+                        Sobrio30® è un integratore naturale, non un medicinale.
+                        La sua formula combina estratti vegetali selezionati, tradizionalmente utilizzati per il supporto digestivo ed epato-biliare,
+                        in un formato pratico e immediato.
+                        È pensato per chi desidera vivere la convivialità con maggiore consapevolezza, senza rinunciare al benessere.
                     </p>
 
                     <div className="cards">

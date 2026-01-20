@@ -4,6 +4,12 @@ import './HeroSpace.css';
 export default function HeroSpace() {
     return (
         <>
+            {/* Il tuo partner intelligente per la sicurezza e il benessere
+Sobrio30® è un integratore alimentare funzionale a base naturale, studiato per supportare l’organismo prima e dopo il consumo di alcool e durante i momenti di maggiore stress digestivo.
+Un pratico stick liquido, da assumere direttamente dalla bustina o diluito in poca acqua, ideale anche fuori casa.
+👉 Quando assumerlo:
+preferibilmente prima del pasto o prima del consumo di alcool.
+ */}
             <div className="herospace" id='home'>
 
                 <div className="container">
@@ -12,11 +18,15 @@ export default function HeroSpace() {
 
                         <div className="hero-slogan">
                             <h1 className='slogan'>VIVI LA SERATA, PENSA AL RITORNO</h1>
-                            <p className='phrase'>Il tuo partner intelligente per la sicurezza e il benessere.</p>
-                            <p className="phrase">Un pratico stick da bere al bisogno direttamente dalla bustina o diluito in poca acqua</p>
-                            <div className="small">Da consumare preferibilmente prima del pasto o del consumo di alcool</div>
-                            <span>Dove puoi trovarmi? <br />
-                                Supermercati, Locali affiliati, Farmacie
+                            <p className='phrase'>
+                                Il tuo partner intelligente per la sicurezza e il benessere.
+                            </p>
+                            <p className="phrase">
+                                Sobrio30® è un integratore alimentare funzionale a base naturale, studiato per supportare l’organismo prima e dopo
+                                il consumo di alcool e durante i momenti di maggiore stress digestivo.
+                            </p>
+                            <span>Quando assumerlo:
+                                preferibilmente prima del pasto o prima del consumo di alcool.
                             </span>
                         </div>
 
