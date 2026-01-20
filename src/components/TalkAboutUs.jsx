@@ -22,28 +22,28 @@ export default function TalkAboutUs() {
 
 
                     <div className="talk-link">
-                        <div className="link-preview">
-                            G
-                        </div>
                         <a href={gazzettino} target="_blank" rel="noopener noreferrer">
+                            <div className="link-preview">
+                                G
+                            </div>
                             Gazzettino
                         </a>
                     </div>
 
                     <div className="talk-link">
-                        <div className="link-preview">
-                            è
-                        </div>
                         <a href={enordest} target="_blank" rel="noopener noreferrer">
+                            <div className="link-preview">
+                                è
+                            </div>
                             èNordEst
                         </a>
                     </div>
 
                     <div className="talk-link">
-                        <div className="link-preview">
-                            P
-                        </div>
                         <a href={polesine24} target="_blank" rel="noopener noreferrer">
+                            <div className="link-preview">
+                                P
+                            </div>
                             Polesine24
                         </a>
                     </div>

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 export default function HomePage() {
 
-    const [formType, setFormType] = useState('private');
+    const [formType, setFormType] = useState('privato');
 
     // Stati per tutti i campi
     const [privateData, setPrivateData] = useState({
@@ -35,12 +35,23 @@ export default function HomePage() {
 
         let data;
 
-        if (formType === 'private') {
+        if (formType === 'privato') {
+            // Validazione campi obbligatori per privato
+            if (!privateData.name || !privateData.email || !privateData.phone || !privateData.address) {
+                alert('Compila tutti i campi obbligatori (Nome, Email, Telefono, Indirizzo)');
+                return;
+            }
             data = {
                 type: formType,
                 ...privateData
             };
         } else {
+            // Validazione campi obbligatori per azienda
+            if (!commercialData.activityRepresentative || !commercialData.email ||
+                !commercialData.phone || !commercialData.address) {
+                alert('Compila tutti i campi obbligatori (Referente, Email, Telefono, Indirizzo)');
+                return;
+            }
             // Per attività commerciali, mappiamo activityRepresentative a name
             data = {
                 type: formType,
@@ -54,25 +65,22 @@ export default function HomePage() {
             };
         }
 
-        console.log('Dati inviati:', data);
+        console.log('Invio dati:', data);
 
         try {
-            console.log('Inizio richiesta axios...');
             const response = await axios.post(
-                'https://sobrio30-backend.onrender.com/send-email',
+                'http://localhost:5000/send-email',
                 data,
                 { headers: { 'Content-Type': 'application/json' } }
             );
 
-            console.log('Richiesta completata!');
-            console.log('Risposta backend:', response.data);
-            console.log('Status:', response.status);
+            console.log('Risposta server:', response);
 
             // Status 204 = successo senza contenuto, oppure success: true
             if (response.status === 204 || response.data?.success) {
                 alert('Email inviata con successo!');
                 // Reset del form
-                if (formType === 'private') {
+                if (formType === 'privato') {
                     setPrivateData({
                         name: '',
                         email: '',
@@ -97,12 +105,17 @@ export default function HomePage() {
 
         } catch (err) {
             console.error('Errore completo:', err);
+            console.error('Risposta errore:', err.response);
+
             if (err.response) {
                 // Errore dal server
-                alert('Errore server: ' + err.response.data.error);
+                const errorMsg = err.response.data?.error || err.response.data?.details || 'Errore sconosciuto';
+                alert('Errore server: ' + errorMsg);
+                console.log('Dettagli errore server:', err.response.data);
             } else if (err.request) {
                 // Nessuna risposta dal server
-                alert('Nessuna risposta dal server');
+                alert('Nessuna risposta dal server. Assicurati che il backend sia avviato su http://localhost:5000');
+                console.log('Nessuna risposta ricevuta');
             } else {
                 // Altro errore
                 alert('Errore: ' + err.message);
@@ -198,27 +211,27 @@ export default function HomePage() {
                                     <input
                                         type="radio"
                                         name="type"
-                                        id="private"
-                                        value={'private'}
-                                        checked={formType === 'private'}
-                                        onChange={() => setFormType('private')} />
-                                    <label htmlFor='private'>Privato</label>
+                                        id="privato"
+                                        value={'privato'}
+                                        checked={formType === 'privato'}
+                                        onChange={() => setFormType('privato')} />
+                                    <label htmlFor='privato'>Privato</label>
                                 </div>
 
                                 <div className="type-choice-module-col">
                                     <input
                                         type="radio"
                                         name="type"
-                                        id="commercial-activity"
-                                        value={'commercial-activity'}
-                                        checked={formType === 'commercial-activity'}
-                                        onChange={() => setFormType('commercial-activity')} />
-                                    <label htmlFor='commercial-activity'>Attività commerciale</label>
+                                        id="azienda"
+                                        value={'azienda'}
+                                        checked={formType === 'azienda'}
+                                        onChange={() => setFormType('azienda')} />
+                                    <label htmlFor='azienda'>Attività commerciale</label>
                                 </div>
                             </div>
 
                             {
-                                formType === 'private' &&
+                                formType === 'privato' &&
                                 <div className="private-module">
                                     <div className="module-col">
                                         <label htmlFor="name-surname">Nome e Cognome</label>
@@ -273,7 +286,7 @@ export default function HomePage() {
                             }
 
                             {
-                                formType === 'commercial-activity' &&
+                                formType === 'azienda' &&
                                 <div className="commercial-module">
                                     <div className="module-col">
                                         <label htmlFor="activity-name">Nome attività</label>
