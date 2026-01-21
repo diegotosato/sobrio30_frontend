@@ -48,22 +48,22 @@ export default function Footer() {
                     </div>
                     <div className="socials">
                         <div className="social-icon">
-                            <a href="https://www.facebook.com/share/1BqQSn5q5o/?mibextid=wwXIfr">
+                            <a href="https://www.facebook.com/share/1BqQSn5q5o/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
                                 <FacebookLogo />
                             </a>
                         </div>
                         <div className="social-icon">
-                            <a href="https://www.instagram.com/sobrio30_official?igsh=M3A5MHB1MHh0YXQ2&utm_source=qr">
+                            <a href="https://www.instagram.com/sobrio30_official?igsh=M3A5MHB1MHh0YXQ2&utm_source=qr" target="_blank" rel="noopener noreferrer">
                                 <InstagramLogo />
                             </a>
                         </div>
                         <div className="social-icon">
-                            <a href="https://www.linkedin.com/company/sobrio30%C2%AE/">
+                            <a href="https://www.linkedin.com/company/sobrio30%C2%AE/" target="_blank" rel="noopener noreferrer">
                                 <LinkedinLogo />
                             </a>
                         </div>
                         <div className="social-icon">
-                            <a href="https://www.tiktok.com/@sobrio30_official?_r=1&_t=ZN-93CkURqQ6A2">
+                            <a href="https://www.tiktok.com/@sobrio30_official?_r=1&_t=ZN-93CkURqQ6A2" target="_blank" rel="noopener noreferrer">
                                 <TiktokLogo />
                             </a>
                         </div>

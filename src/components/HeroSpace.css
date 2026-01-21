@@ -59,6 +59,7 @@
 }
 
 .herospace .visual strong {
+    display: block;
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -148,6 +149,10 @@
     .herospace .visual {
         width: 60%;
         margin-top: 30px;
+    }
+
+    .herospace .visual strong {
+        bottom: -40px;
     }
 }
 

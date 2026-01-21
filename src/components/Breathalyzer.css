@@ -82,6 +82,7 @@
     .breathalyzer-text {
         width: 100%;
         font-size: 1.1rem;
+        margin-left: 0px;
     }
 
     .breathalyzer-banner {

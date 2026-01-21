@@ -1,4 +1,5 @@
 import { FirstAid, Brain, Feather, ShieldCheck, Note } from "@phosphor-icons/react";
+import './Results.css';
 
 export default function Results() {
     return (
