@@ -29,172 +29,28 @@
     color: white;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form label {
-    font-weight: bold;
-    display: block;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-form {
-    width: 50%;
-    margin: 0 auto;
-}
-
-form button {
-    padding: 10px 20px;
-    background-color: #a04f4f;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #853b3b;
-}
-
-.type-choice {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-
-.type-choice-module-col {
-    display: flex;
-    gap: 10px;
-}
-
-.private-module,
-.commercial-module {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.private-module textarea,
-.commercial-module textarea {
-    width: 100%;
-    height: 100px;
-    resize: none;
-}
-
-.module-col-100 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-.module-col {
-    width: calc(50% - 10px);
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
 /* Media Queries */
 @media (max-width: 1270px) {
-    form {
-        width: 55%;
-    }
-
     .resell-scheda-text {
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 1200px) {
-    form {
-        width: 60%;
-    }
-
     .resell-scheda-text {
         font-size: 1.08rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 1081px) {
-    form {
-        width: 65%;
-    }
-
-    .type-choice {
-        gap: 15px;
     }
 }
 
 @media (max-width: 992px) {
-    form {
-        width: 75%;
-    }
-
     .resell-scheda-text {
         font-size: 1.05rem;
-    }
-
-    .private-module,
-    .commercial-module {
-        gap: 10px;
-    }
-
-    .type-choice {
-        flex-direction: column;
-        gap: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    form {
-        width: 90%;
-    }
-
     .resell-scheda-text {
         font-size: 1rem;
-    }
-
-    .module-col {
-        width: 100%;
-    }
-
-    .private-module,
-    .commercial-module {
-        gap: 0;
-    }
-
-    .contact-form {
-        gap: 12px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    form button {
-        font-size: 0.95rem;
-        padding: 8px 16px;
     }
 
     .downloader a {
@@ -204,43 +60,14 @@ form button:hover {
 }
 
 @media (max-width: 576px) {
-    form {
-        width: 100%;
-    }
-
     .resell-scheda-text {
         font-size: 0.95rem;
         margin: 8px 0 15px;
     }
 
-    .contact-form {
-        gap: 10px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        font-size: 0.85rem;
-        padding: 7px;
-    }
-
-    .private-module textarea,
-    .commercial-module textarea {
-        height: 80px;
-    }
-
-    form button {
-        font-size: 0.9rem;
-        padding: 7px 14px;
-    }
-
     .downloader a {
         padding: 7px 10px;
         font-size: 0.9rem;
-    }
-
-    .module-col-100,
-    .module-col {
-        margin-bottom: 10px;
     }
 }
 
