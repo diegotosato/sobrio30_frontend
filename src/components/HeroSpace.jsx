@@ -4,12 +4,6 @@ import './HeroSpace.css';
 export default function HeroSpace() {
     return (
         <>
-            {/* Il tuo partner intelligente per la sicurezza e il benessere
-Sobrio30® è un integratore alimentare funzionale a base naturale, studiato per supportare l’organismo prima e dopo il consumo di alcool e durante i momenti di maggiore stress digestivo.
-Un pratico stick liquido, da assumere direttamente dalla bustina o diluito in poca acqua, ideale anche fuori casa.
-👉 Quando assumerlo:
-preferibilmente prima del pasto o prima del consumo di alcool.
- */}
             <div className="herospace" id='home'>
 
                 <div className="container">
@@ -32,6 +26,10 @@ preferibilmente prima del pasto o prima del consumo di alcool.
 
                         <div className="visual">
                             <img src={Visual} alt="visual" />
+                            <strong>
+                                Prodotto incluso nel registro degli integratori
+                                del Ministero della Salute Italiana; codice 204836
+                            </strong>
                         </div>
 
                     </div>

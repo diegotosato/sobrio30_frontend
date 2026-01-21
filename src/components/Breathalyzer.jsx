@@ -21,8 +21,8 @@ export default function Breathalyzer() {
                         <div className="breathalyzer-text">
                             <p>
                                 In un sottogruppo di partecipanti, le misurazioni con etilometro
-                                a 30-35 minuti dall'ultima assunzione di alcool hanno rilevato valori medi
-                                compresi tra <strong>0.3 e 0.4 mg/L</strong>.
+                                a 30-35 minuti dall'ultima assunzione di alcool, hanno rilevato valori medi
+                                compresi tra <strong>0.3 e 0.4 mg/L</strong>, da valori di partenza superiori a <strong>1 mg/L</strong>.
                             </p>
                         </div>
                     </div>

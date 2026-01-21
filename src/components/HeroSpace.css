@@ -55,6 +55,14 @@
 
 .herospace .visual {
     width: 40%;
+    position: relative;
+}
+
+.herospace .visual strong {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: var(--s30-yel);
 }
 
 .herospace .visual img {

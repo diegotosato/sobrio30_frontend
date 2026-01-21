@@ -25,6 +25,10 @@ export default function HomePage() {
 
                     <div className="visual">
                         <img src={Visual} alt="visual" />
+                        <strong>
+                            Prodotto incluso nel registro degli integratori
+                            del Ministero della Salute Italiana; codice 204836
+                        </strong>
                     </div>
 
                 </div>
