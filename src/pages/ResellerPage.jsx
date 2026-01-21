@@ -42,13 +42,23 @@ export default function HomePage() {
                     </h2>
 
                     <div className="resell-scheda-text">
-                        <p>Entrare nella rete dei rivenditori Sobrio30 significa: <br />
-                            - ampliare la tua offerta con un prodotto ad alto valore percepito <br />
-                            - distinguerti come locale attento alla sicurezza e al benessere dei clienti <br />
-                            - aumentare le opportunità di vendita con un prodotto facile da proporre <br />
-                            - ricevere materiale espositivo dedicato per il punto vendita <br />
-                            Sobrio30 è adatto a ristoranti, bar, lounge bar, discoteche, wine bar e locali serali
-                        </p>
+                        <p>Entrare nella rete dei rivenditori Sobrio30 significa:</p>
+                        <ul>
+                            <li>
+                                ampliare la tua offerta con un prodotto ad alto valore percepito
+                            </li>
+                            <li>
+                                distinguerti come locale attento alla sicurezza e al benessere dei clienti
+                            </li>
+                            <li>
+                                aumentare le opportunità di vendita con un prodotto facile da proporre
+                            </li>
+                            <li>
+                                ricevere materiale espositivo dedicato per il punto vendita
+                            </li>
+                        </ul>
+                        Sobrio30 è adatto a ristoranti, bar, lounge bar, discoteche, wine bar e locali serali
+
                     </div>
 
                     <h2 className='section-title'>
@@ -74,13 +84,23 @@ export default function HomePage() {
                         Come diventare rivenditore Sobrio30?
                     </h2>
                     <div className="resell-scheda-text">
-                        <p>Compila il form di contatto presente in questa pagina.
-                            Un nostro rappresentante commerciale ti ricontatterà per illustrarti: <br />
-                            - le modalità di fornitura <br />
-                            - le condizioni riservate ai rivenditori <br />
-                            - le soluzioni espositive disponibili <br />
-                            - il supporto commerciale dedicato <br />
-                        </p>
+                        <p>Compila il form di contatto presente in questa pagina. <br />
+                            Un nostro rappresentante commerciale ti ricontatterà per illustrarti:</p>
+                        <ul>
+                            <li>
+                                le modalità di fornitura
+                            </li>
+                            <li>
+                                le condizioni riservate ai rivenditori
+                            </li>
+                            <li>
+                                le soluzioni espositive disponibili
+                            </li>
+                            <li>
+                                il supporto commerciale dedicato
+                            </li>
+                        </ul>
+
                     </div>
 
                     <SendMail />
