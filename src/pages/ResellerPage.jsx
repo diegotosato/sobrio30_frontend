@@ -11,29 +11,32 @@ export default function HomePage() {
         <>
             <section className="herospace" id='reseller'>
 
-                <div className="container d-flex j-c-between a-i-center">
+                <div className="container">
 
-                    <div className="hero-slogan">
-                        <h1 className='slogan'>Diventa Rivenditore Sobrio30</h1>
-                        <p className='phrase'>Se sei il proprietario di un ristorante, bar, pub o locale notturno e stai cercando un prodotto innovativo da proporre ai tuoi clienti, Sobrio30 è la soluzione ideale</p>
-                        <p className="phrase">Un pratico stick da bere al bisogno direttamente dalla bustina o diluito in poca acqua</p>
-                        <br />
-                        <br />
-                        <span>Sobrio30 è un integratore alimentare pensato per accompagnare il consumo di alcol, offrendo un supporto mirato al metabolismo dopo la serata. Un prodotto sempre più richiesto da chi desidera vivere la serata in modo responsabile e pensare al rientro
-                        </span>
-                    </div>
+                    <div className='d-flex j-c-between a-i-center hero-wrapper'>
 
-                    <div className="visual">
-                        <img src={Visual} alt="visual" />
-                        <strong>
-                            Prodotto incluso nel registro degli integratori
-                            del Ministero della Salute Italiana; codice 204836
-                        </strong>
+                        <div className="hero-slogan">
+                            <h1 className='slogan'>Diventa Rivenditore Sobrio30</h1>
+                            <p className='phrase'>Se sei il proprietario di un ristorante, bar, pub o locale notturno e stai cercando un prodotto innovativo da proporre ai tuoi clienti, Sobrio30 è la soluzione ideale</p>
+                            <p className="phrase">Un pratico stick da bere al bisogno direttamente dalla bustina o diluito in poca acqua</p>
+
+                            <span>Sobrio30 è un integratore alimentare pensato per accompagnare il consumo di alcol, offrendo un supporto mirato al metabolismo dopo la serata. Un prodotto sempre più richiesto da chi desidera vivere la serata in modo responsabile e pensare al rientro
+                            </span>
+                        </div>
+
+                        <div className="visual">
+                            <img src={Visual} alt="visual" />
+                            <strong>
+                                Prodotto incluso nel registro degli integratori
+                                del Ministero della Salute Italiana; codice 204836
+                            </strong>
+                        </div>
+
                     </div>
 
                 </div>
 
-            </section>
+            </section >
 
 
 
