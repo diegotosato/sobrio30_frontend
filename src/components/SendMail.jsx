@@ -1,125 +1,134 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './SendMail.css';
+import { Warning } from '@phosphor-icons/react';
+
+const initialData = {
+    type: 'privato',
+    name: '',
+    activityName: '',
+    activityType: '',
+    email: '',
+    phone: '',
+    address: '',
+    message: '',
+};
 
 export default function SendMail() {
-    const [formType, setFormType] = useState('privato');
+    const [formData, setFormData] = useState(initialData);
+    const [validation, setValidation] = useState(false);
+    const [sendSuccess, setSendSuccess] = useState(false);
+    const [sendError, setSendError] = useState(false);
+    const [isDisabled, setIsDisabled] = useState(true);
 
-    // Stati per tutti i campi
-    const [privateData, setPrivateData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        message: ''
-    });
 
-    const [commercialData, setCommercialData] = useState({
-        activityName: '',
-        activityRepresentative: '',
-        activityType: '',
-        email: '',
-        phone: '',
-        address: '',
-        message: ''
-    });
 
+    const isAzienda = formData.type === 'azienda';
+
+    const requiredFields = isAzienda
+        ? ['activityName', 'name', 'activityType', 'email', 'phone', 'address']
+        : ['name', 'email', 'phone', 'address'];
+
+    const isFormValid = requiredFields.every(field => formData[field].trim() !== '');
+
+    useEffect(() => {
+        setIsDisabled(!isFormValid);
+    }, [formData, isFormValid]);
+
+    function handleChange(field, value) {
+        setFormData(prevData => ({
+            ...prevData,
+            [field]: value,
+        }));
+    }
 
     async function handleSubmit(e) {
         e.preventDefault();
+        setSendError(false);
+        setSendSuccess(false);
 
-        let data;
-
-        if (formType === 'privato') {
-            // Validazione campi obbligatori per privato
-            if (!privateData.name || !privateData.email || !privateData.phone || !privateData.address) {
-                alert('Compila tutti i campi obbligatori (Nome, Email, Telefono, Indirizzo)');
-                return;
-            }
-            data = {
-                type: formType,
-                ...privateData
-            };
-        } else {
-            // Validazione campi obbligatori per azienda
-            if (!commercialData.activityRepresentative || !commercialData.email ||
-                !commercialData.phone || !commercialData.address) {
-                alert('Compila tutti i campi obbligatori (Referente, Email, Telefono, Indirizzo)');
-                return;
-            }
-            // Per attività commerciali, mappiamo activityRepresentative a name
-            data = {
-                type: formType,
-                name: commercialData.activityRepresentative,
-                email: commercialData.email,
-                phone: commercialData.phone,
-                address: commercialData.address,
-                message: commercialData.message,
-                activityName: commercialData.activityName,
-                activityType: commercialData.activityType
-            };
+        if (!isFormValid) {
+            setValidation(true);
+            return;
         }
 
-        console.log('Invio dati:', data);
+        setValidation(false);
 
         try {
+            const payload = {
+                type: formData.type,
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                address: formData.address,
+                message: formData.message,
+                activityName: isAzienda ? formData.activityName : undefined,
+                activityType: isAzienda ? formData.activityType : undefined,
+            };
+
             const response = await axios.post(
-                'http://localhost:5000/send-email',
-                data,
+                'http://localhost:5000/send-emails',
+                payload,
                 { headers: { 'Content-Type': 'application/json' } }
             );
 
-            console.log('Risposta server:', response);
-
-            // Status 204 = successo senza contenuto, oppure success: true
             if (response.status === 204 || response.data?.success) {
-                alert('Email inviata con successo!');
-                // Reset del form
-                if (formType === 'privato') {
-                    setPrivateData({
-                        name: '',
-                        email: '',
-                        phone: '',
-                        address: '',
-                        message: ''
-                    });
-                } else {
-                    setCommercialData({
-                        activityName: '',
-                        activityRepresentative: '',
-                        activityType: '',
-                        email: '',
-                        phone: '',
-                        address: '',
-                        message: ''
-                    });
-                }
+                setSendSuccess(true);
+                setFormData(initialData);
             } else {
-                alert('Errore: ' + response.data.error);
+                setSendError(true);
             }
-
-        } catch (err) {
-            console.error('Errore completo:', err);
-            console.error('Risposta errore:', err.response);
-
-            if (err.response) {
-                // Errore dal server
-                const errorMsg = err.response.data?.error || err.response.data?.details || 'Errore sconosciuto';
-                alert('Errore server: ' + errorMsg);
-                console.log('Dettagli errore server:', err.response.data);
-            } else if (err.request) {
-                // Nessuna risposta dal server
-                alert('Nessuna risposta dal server. Assicurati che il backend sia avviato su http://localhost:5000');
-                console.log('Nessuna risposta ricevuta');
-            } else {
-                // Altro errore
-                alert('Errore: ' + err.message);
-            }
+        } catch {
+            setSendError(true);
         }
     }
 
+    function renderInput(label, field, type = 'text') {
+        return (
+            <div className="module-col">
+                <label>{label} (*)</label>
+                <input
+                    type={type}
+                    value={formData[field]}
+                    onChange={(e) => handleChange(field, e.target.value)}
+                />
+                {validation && !formData[field] && (
+                    <span className="warning-text">
+                        <Warning /> Campo obbligatorio
+                    </span>
+                )}
+            </div>
+        );
+    }
+
+
     return (
         <div className="contact-form">
+
+            {
+                sendSuccess &&
+                <div className="send-alert">
+                    <span className='send-success'>Email inviata con successo!</span>
+                    <button
+                        className='close-alert'
+                        onClick={() => setSendSuccess(false)}>
+                        OK
+                    </button>
+                </div>
+            }
+
+            {
+                sendError &&
+                <div className="send-alert">
+                    <span className='send-error'>Errore nell'invio dell'email. Riprova più tardi.</span>
+                    <button
+                        className='close-alert'
+                        onClick={() => setSendError(false)}>
+                        OK
+                    </button>
+                </div>
+            }
+
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div className="type-choice">
 
@@ -131,8 +140,8 @@ export default function SendMail() {
                             name="type"
                             id="privato"
                             value={'privato'}
-                            checked={formType === 'privato'}
-                            onChange={() => setFormType('privato')} />
+                            checked={formData.type === 'privato'}
+                            onChange={() => handleChange('type', 'privato')} />
                         <label htmlFor='privato'>Privato</label>
                     </div>
 
@@ -142,147 +151,40 @@ export default function SendMail() {
                             name="type"
                             id="azienda"
                             value={'azienda'}
-                            checked={formType === 'azienda'}
-                            onChange={() => setFormType('azienda')} />
+                            checked={formData.type === 'azienda'}
+                            onChange={() => handleChange('type', 'azienda')} />
                         <label htmlFor='azienda'>Attività commerciale</label>
                     </div>
                 </div>
 
-                {
-                    formType === 'privato' &&
-                    <div className="private-module">
-                        <div className="module-col">
-                            <label htmlFor="name-surname">Nome e Cognome</label>
-                            <input
-                                type="text"
-                                id="name-surname"
-                                value={privateData.name}
-                                onChange={(e) => setPrivateData({ ...privateData, name: e.target.value })} />
-                        </div>
+                <div className="module">
+                    {
+                        renderInput(formData.type === 'azienda' ? 'Nome e Cognome del referente' : 'Nome e Cognome', 'name')
+                    }
 
-                        <div className="module-col">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                value={privateData.email}
-                                onChange={(e) => setPrivateData({ ...privateData, email: e.target.value })} />
-                        </div>
+                    {isAzienda && renderInput('Nome attività', 'activityName')}
+                    {isAzienda && renderInput('Tipo di attività', 'activityType')}
 
+                    {renderInput('Email', 'email', 'email')}
+                    {renderInput('Telefono', 'phone', 'tel')}
+                    {renderInput('Indirizzo', 'address')}
 
-                        <div className="module-col">
-                            <label htmlFor="phone">Telefono</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                value={privateData.phone}
-                                onChange={(e) => setPrivateData({ ...privateData, phone: e.target.value })} />
-                        </div>
-
-
-                        <div className="module-col">
-                            <label htmlFor="address">Indirizzo</label>
-                            <input
-                                type="text"
-                                id="address"
-                                value={privateData.address}
-                                onChange={(e) => setPrivateData({ ...privateData, address: e.target.value })} />
-                        </div>
-
-                        <div className="module-col-100">
-                            <label htmlFor="message">Scrivi il tuo messaggio</label>
-                            <textarea
-                                name="message"
-                                id="message"
-                                placeholder='Scrivi qui il tuo messaggio...'
-                                value={privateData.message}
-                                onChange={(e) => setPrivateData({ ...privateData, message: e.target.value })}>
-                            </textarea>
-                        </div>
-
+                    <div className="module-col-100">
+                        <label htmlFor="message">Scrivi il tuo messaggio</label>
+                        <textarea
+                            name="message"
+                            id="message"
+                            placeholder='Scrivi qui il tuo messaggio...'
+                            value={formData.message}
+                            onChange={(e) => handleChange('message', e.target.value)}>
+                        </textarea>
                     </div>
-                }
 
-                {
-                    formType === 'azienda' &&
-                    <div className="commercial-module">
-                        <div className="module-col">
-                            <label htmlFor="activity-name">Nome attività</label>
-                            <input
-                                type="text"
-                                id="activity-name"
-                                value={commercialData.activityName}
-                                onChange={(e) => setCommercialData({ ...commercialData, activityName: e.target.value })}
-                            />
-                        </div>
+                    <span>(*) Campi obbligatori</span>
+                </div>
 
-                        <div className="module-col">
-                            <label htmlFor="activity-representative">Nome e Cognome del referente</label>
-                            <input
-                                type="text"
-                                id="activity-representative"
-                                value={commercialData.activityRepresentative}
-                                onChange={(e) => setCommercialData({ ...commercialData, activityRepresentative: e.target.value })}
-                            />
-                        </div>
-
-                        <div className="module-col">
-                            <label htmlFor="activity-type">Tipo di attività</label>
-                            <input
-                                type="text"
-                                id="activity-type"
-                                value={commercialData.activityType}
-                                onChange={(e) => setCommercialData({ ...commercialData, activityType: e.target.value })}
-                            />
-                        </div>
-
-
-                        <div className="module-col">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                value={commercialData.email}
-                                onChange={(e) => setCommercialData({ ...commercialData, email: e.target.value })}
-                            />
-                        </div>
-
-
-                        <div className="module-col">
-                            <label htmlFor="phone">Telefono</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                value={commercialData.phone}
-                                onChange={(e) => setCommercialData({ ...commercialData, phone: e.target.value })}
-                            />
-                        </div>
-
-                        <div className="module-col">
-                            <label htmlFor="address">Indirizzo</label>
-                            <input
-                                type="text"
-                                id="address"
-                                value={commercialData.address}
-                                onChange={(e) => setCommercialData({ ...commercialData, address: e.target.value })}
-                            />
-                        </div>
-
-                        <div className="module-col-100">
-                            <label htmlFor="message">Scrivi il tuo messaggio</label>
-                            <textarea
-                                name="message"
-                                id="message"
-                                placeholder='Scrivi qui il tuo messaggio...'
-                                value={commercialData.message}
-                                onChange={(e) => setCommercialData({ ...commercialData, message: e.target.value })}>
-                            </textarea>
-                        </div>
-                    </div>
-                }
-
-                <button type="submit">Invia</button>
-            </form>
-        </div>
+                <button type="submit" disabled={!isFormValid}>Invia</button>
+            </form >
+        </div >
     )
 }

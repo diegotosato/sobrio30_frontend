@@ -24,7 +24,7 @@ form {
 
 form button {
     padding: 10px 20px;
-    background-color: #a04f4f;
+    background-color: var(--light-red);
     color: white;
     border: none;
     border-radius: 4px;
@@ -33,7 +33,12 @@ form button {
 }
 
 form button:hover {
-    background-color: #853b3b;
+    background-color: var(--dark-red);
+}
+
+form button:disabled {
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
 }
 
 .type-choice {
@@ -47,8 +52,7 @@ form button:hover {
     gap: 10px;
 }
 
-.private-module,
-.commercial-module {
+.module {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -56,8 +60,7 @@ form button:hover {
     margin-bottom: 20px;
 }
 
-.private-module textarea,
-.commercial-module textarea {
+.module textarea {
     width: 100%;
     height: 100px;
     resize: none;
@@ -76,6 +79,64 @@ form button:hover {
     flex-direction: column;
     margin-bottom: 15px;
 }
+
+.warning-text {
+    color: var(--light-red);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.send-alert {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-alert span {
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.send-success {
+    border: 2px solid var(--s30-green);
+    background-color: var(--s30-green);
+}
+
+.send-error {
+    border: 2px solid var(--light-red);
+    background-color: var(--light-red);
+}
+
+.close-alert {
+    margin-top: 15px;
+    padding: 8px 12px;
+    border: none;
+    background-color: white;
+    color: var(--light-red);
+    border: 1px solid var(--light-red);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-alert:hover {
+    background-color: var(--light-red);
+    color: white;
+}
+
 
 /* Media Queries */
 @media (max-width: 1270px) {
