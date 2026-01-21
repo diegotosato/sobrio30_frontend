@@ -65,6 +65,11 @@ export default function SendMail() {
                 activityName: isAzienda ? formData.activityName : undefined,
                 activityType: isAzienda ? formData.activityType : undefined,
             };
+            // const response = await axios.post(
+            //     `${import.meta.env.VITE_API_URL}/send-emails`,
+            //     payload,
+            //     { headers: { 'Content-Type': 'application/json' } }
+            // );
 
             const response = await axios.post(
                 'http://localhost:5000/send-emails',
