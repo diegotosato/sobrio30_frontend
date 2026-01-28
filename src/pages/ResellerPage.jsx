@@ -1,4 +1,4 @@
-import Visual from '../assets/Visual.png';
+import NewVisual from '../assets/NewVisual.png';
 import { FilePdf } from '@phosphor-icons/react'
 import './ResellerPage.css';
 import SendMail from '../components/SendMail';
@@ -25,7 +25,7 @@ export default function HomePage() {
                         </div>
 
                         <div className="visual">
-                            <img src={Visual} alt="visual" />
+                            <img src={NewVisual} alt="visual" />
                             <strong>
                                 Prodotto incluso nel registro degli integratori
                                 del Ministero della Salute Italiana; codice 204836

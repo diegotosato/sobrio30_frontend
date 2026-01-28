@@ -1,4 +1,4 @@
-import Visual from '../assets/Visual.png';
+import NewVisual from '../assets/NewVisual.png';
 import './HeroSpace.css';
 
 export default function HeroSpace() {
@@ -25,7 +25,7 @@ export default function HeroSpace() {
                         </div>
 
                         <div className="visual">
-                            <img src={Visual} alt="visual" />
+                            <img src={NewVisual} alt="visual" />
                             <strong>
                                 Prodotto incluso nel registro degli integratori
                                 del Ministero della Salute Italiana; codice 204836
