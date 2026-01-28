@@ -3,6 +3,11 @@
     background-color: #f4f4f4;
 }
 
+#reseller .hero-slogan span {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 ul {
     margin-left: 30px;
 }
@@ -35,24 +40,40 @@ ul {
 
 /* Media Queries */
 @media (max-width: 1270px) {
+    #reseller .hero-slogan span {
+        font-size: 0.95rem;
+    }
+
     .resell-scheda-text {
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 1200px) {
+    #reseller .hero-slogan span {
+        font-size: 0.92rem;
+    }
+
     .resell-scheda-text {
         font-size: 1.08rem;
     }
 }
 
 @media (max-width: 992px) {
+    #reseller .hero-slogan span {
+        font-size: 0.9rem;
+    }
+
     .resell-scheda-text {
         font-size: 1.05rem;
     }
 }
 
 @media (max-width: 768px) {
+    #reseller .hero-slogan span {
+        font-size: 0.85rem;
+    }
+
     .resell-scheda-text {
         font-size: 1rem;
     }
@@ -64,6 +85,10 @@ ul {
 }
 
 @media (max-width: 576px) {
+    #reseller .hero-slogan span {
+        font-size: 0.8rem;
+    }
+
     .resell-scheda-text {
         font-size: 0.95rem;
         margin: 8px 0 15px;
