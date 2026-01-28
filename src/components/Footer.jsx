@@ -45,8 +45,9 @@ export default function Footer() {
                         <p className="company-contacts-phone">
                             <a href="tel:+393517093135"><strong>Telefono/Whatsapp:</strong> +39 3517093135</a>
                         </p>
-                        <p><strong>P.IVA:</strong> [DA_INSERIRE]</p>
-                        <p><strong>REA:</strong> [DA_INSERIRE]</p>
+                        <p><strong>P.IVA:</strong> 05360410269</p>
+                        <p><strong>C.F.:</strong> 05360410269</p>
+                        <p><strong>REA:</strong> TV - 438242</p>
                     </div>
 
                     <div className="links">
@@ -82,13 +83,14 @@ export default function Footer() {
 
                     </div>
 
-                    <div className="separator"></div>
-
-                    <div className="copyright">
-                        <p>© 2026 Cortitech Srl - P.IVA [DA_INSERIRE] - Tutti i diritti riservati</p>
-                    </div>
-
                 </div>
+
+                <div className="separator"></div>
+
+                <div className="copyright">
+                    <p>© 2026 Cortitech Srl - P.IVA 05360410269 - Tutti i diritti riservati</p>
+                </div>
+
             </div>
         </footer>
     );
