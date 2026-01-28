@@ -39,7 +39,7 @@ export default function Breathalyzer() {
                             Non hanno valore medico-legale e non garantiscono l'idonità alla guida
                         </p>
                         <p>
-                            Sobrio30 favorisce il ritorno entro i limiti di legge,
+                            Sobrio30 supporta i naturali processi metabolici dell’organismo dopo il consumo di alcool,
                             ma la responsabilità resta sempre individuale
                         </p>
                     </div>

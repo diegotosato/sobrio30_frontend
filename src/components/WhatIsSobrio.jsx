@@ -32,7 +32,7 @@ export default function WhatIsSobrio() {
                             <div className="card-body">
                                 <div className="card-title">Azione Detox</div>
                                 <div className="card-text">
-                                    favorisce la disintossicazione del fegato e funge da epatoprotettore
+                                    Supporta le normali funzioni fisiologiche del fegato
                                 </div>
                             </div>
                             <div className="card-img">
@@ -43,7 +43,7 @@ export default function WhatIsSobrio() {
                             <div className="card-body">
                                 <div className="card-title">Recupero Post-Pasto</div>
                                 <div className="card-text">
-                                    Elimina gonfiore, pesantezza, nausea e mal di testa post-abbuffata, sostenendo la funzione digestiva e la motilità gastrointestinale
+                                    Contribuisce ad alleviare la sensazione di gonfiore e pesantezza dopo pasti abbondanti, sostenendo la funzione digestiva e la motilità gastrointestinale
                                 </div>
                             </div>
                             <div className="card-img">
@@ -54,7 +54,7 @@ export default function WhatIsSobrio() {
                             <div className="card-body">
                                 <div className="card-title">Lucidità</div>
                                 <div className="card-text">
-                                    Aiuta a ritrovare rapidamente prontezza di riflessi e lucidità mentale
+                                    Favorisce una sensazione di maggiore equilibrio e benessere dopo la serata
                                 </div>
                             </div>
                             <div className="card-img">
