@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import ScrollToTop from "./components/ScrollToTop"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
 import CookiePolicy from "./pages/CookiePolicy"
+import TermsConditions from "./pages/TermsConditions"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/reseller" element={<ResellerPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/termini-e-condizioni" element={<TermsConditions />} />
         </Route>
       </Routes>
     </Router>
