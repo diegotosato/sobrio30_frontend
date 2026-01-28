@@ -190,8 +190,8 @@ export default function SendMail() {
                             checked={formData.privacy}
                             onChange={(e) => handleChange('privacy', e.target.checked)} />
                         <label htmlFor="privacy">
-                            Dichiaro di aver letto l’<a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Informativa Privacy</a> e
-                            acconsento al trattamento dei miei dati per essere ricontattato
+                            (*) Dichiaro di aver letto l’<a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Informativa Privacy</a> e
+                            acconsento al trattamento dei miei dati per essere ricontattato.
                         </label>
                     </div>
 

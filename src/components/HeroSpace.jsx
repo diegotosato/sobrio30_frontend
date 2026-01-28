@@ -16,8 +16,8 @@ export default function HeroSpace() {
                                 Il tuo partner intelligente per la sicurezza e il benessere.
                             </p>
                             <p className="phrase">
-                                Sobrio30® è un integratore alimentare funzionale a base naturale, studiato per supportare l’organismo prima e dopo
-                                il consumo di alcool e durante i momenti di maggiore stress digestivo.
+                                Sobrio30® è un integratore alimentare funzionale, 100% naturale, studiato per supportare il metabolismo prima e dopo
+                                il consumo di cibo e alcool durante i momenti di maggiore stress digestivo.
                             </p>
                             <span>Quando assumerlo:
                                 preferibilmente prima del pasto o prima del consumo di alcool.
