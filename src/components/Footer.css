@@ -92,6 +92,16 @@ footer {
     color: var(--s30-yel);
 }
 
+.copyright {
+    text-align: center;
+    color: rgb(190, 190, 190);
+    margin-top: 2rem;
+}
+
+.copyright p {
+    font-size: 0.85rem;
+}
+
 /* Media Queries */
 @media (max-width: 1200px) {
     footer {
@@ -217,6 +227,14 @@ footer {
 
     .footer-links a {
         font-size: 0.75rem;
+    }
+
+    .copyright {
+        margin-top: 1rem;
+    }
+
+    .copyright p {
+        font-size: 0.7rem;
     }
 }
 
