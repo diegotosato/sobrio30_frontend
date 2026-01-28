@@ -1,8 +1,7 @@
 /* #region PrivacyPolicy */
 .privacy-policy {
     background-color: var(--s30-beige);
-    padding: 7rem 0 !important;
-    padding-top: calc(7rem + 100px) !important;
+    padding: 4rem 2rem !important;
 }
 
 .privacy-policy .section-title {
@@ -70,8 +69,7 @@
 /* Media Queries */
 @media (max-width: 1270px) {
     .privacy-policy {
-        padding: 6rem 0 !important;
-        padding-top: calc(6rem + 100px) !important;
+        padding: 3.5rem 2rem !important;
     }
 
     .privacy-subtitle {
@@ -81,8 +79,7 @@
 
 @media (max-width: 992px) {
     .privacy-policy {
-        padding: 5rem 0 !important;
-        padding-top: calc(5rem + 90px) !important;
+        padding: 3rem 1.5rem !important;
     }
 
     .privacy-policy .section-title {
@@ -101,8 +98,7 @@
 
 @media (max-width: 768px) {
     .privacy-policy {
-        padding: 4rem 0 !important;
-        padding-top: calc(4rem + 90px) !important;
+        padding: 2.5rem 1rem !important;
     }
 
     .privacy-policy .section-title {
@@ -135,8 +131,7 @@
 
 @media (max-width: 576px) {
     .privacy-policy {
-        padding: 3rem 0 !important;
-        padding-top: calc(3rem + 80px) !important;
+        padding: 2rem 1rem !important;
     }
 
     .privacy-policy .section-title {

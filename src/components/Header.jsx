@@ -3,6 +3,14 @@ import { NavLink } from 'react-router-dom';
 import './Header.css';
 
 export default function Header() {
+    const scrollToContacts = (e) => {
+        e.preventDefault();
+        const contactsElement = document.getElementById('contacts');
+        if (contactsElement) {
+            contactsElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <header>
             <div className="container">
@@ -20,7 +28,7 @@ export default function Header() {
                             <NavLink to="/reseller">Diventa rivenditore</NavLink>
                         </li>
                         <li>
-                            <a href="#contacts">Contatti</a>
+                            <a href="#contacts" onClick={scrollToContacts}>Contatti</a>
                         </li>
                     </ul>
                 </nav>
