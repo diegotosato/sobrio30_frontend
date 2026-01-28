@@ -73,6 +73,13 @@ form button:disabled {
     margin-bottom: 15px;
 }
 
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
 .module-col {
     width: calc(50% - 10px);
     display: flex;

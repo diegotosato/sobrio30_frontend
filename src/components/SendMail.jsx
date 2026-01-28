@@ -12,6 +12,7 @@ const initialData = {
     phone: '',
     address: '',
     message: '',
+    privacy: false,
 };
 
 export default function SendMail() {
@@ -20,20 +21,24 @@ export default function SendMail() {
     const [sendSuccess, setSendSuccess] = useState(false);
     const [sendError, setSendError] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
+    const [checked, setChecked] = useState(false);
 
+    const isChecked = () => {
+        setChecked(!checked);
+    };
 
 
     const isAzienda = formData.type === 'azienda';
 
     const requiredFields = isAzienda
-        ? ['activityName', 'name', 'activityType', 'email', 'phone', 'address']
-        : ['name', 'email', 'phone', 'address'];
+        ? ['activityName', 'name', 'activityType', 'email', 'phone', 'address', 'privacy']
+        : ['name', 'email', 'phone', 'address', 'privacy'];
 
-    const isFormValid = requiredFields.every(field => formData[field].trim() !== '');
+    const isFormValid = requiredFields.every(field => formData[field] && formData[field].toString().trim() !== '');
 
     useEffect(() => {
-        setIsDisabled(!isFormValid);
-    }, [formData, isFormValid]);
+        setIsDisabled(!isFormValid || !checked);
+    }, [formData, isFormValid, checked]);
 
     function handleChange(field, value) {
         setFormData(prevData => ({
@@ -177,6 +182,17 @@ export default function SendMail() {
                             value={formData.message}
                             onChange={(e) => handleChange('message', e.target.value)}>
                         </textarea>
+                    </div>
+
+                    <div className="checkbox">
+                        <input
+                            type="checkbox"
+                            checked={formData.privacy}
+                            onChange={(e) => handleChange('privacy', e.target.checked)} />
+                        <label htmlFor="privacy">
+                            Dichiaro di aver letto l’Informativa Privacy e
+                            acconsento al trattamento dei miei dati per essere ricontattato
+                        </label>
                     </div>
 
                     <span>(*) Campi obbligatori</span>
