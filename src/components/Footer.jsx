@@ -46,28 +46,40 @@ export default function Footer() {
                             <a href="tel:+393517093135"><strong>Telefono/Whatsapp:</strong> +39 3517093135</a>
                         </p>
                     </div>
-                    <div className="socials">
-                        <div className="social-icon">
-                            <a href="https://www.facebook.com/share/1BqQSn5q5o/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
-                                <FacebookLogo />
-                            </a>
+
+                    <div className="links">
+
+                        <div className="socials">
+                            <div className="social-icon">
+                                <a href="https://www.facebook.com/share/1BqQSn5q5o/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                                    <FacebookLogo />
+                                </a>
+                            </div>
+                            <div className="social-icon">
+                                <a href="https://www.instagram.com/sobrio30_official?igsh=M3A5MHB1MHh0YXQ2&utm_source=qr" target="_blank" rel="noopener noreferrer">
+                                    <InstagramLogo />
+                                </a>
+                            </div>
+                            <div className="social-icon">
+                                <a href="https://www.linkedin.com/company/sobrio30%C2%AE/" target="_blank" rel="noopener noreferrer">
+                                    <LinkedinLogo />
+                                </a>
+                            </div>
+                            <div className="social-icon">
+                                <a href="https://www.tiktok.com/@sobrio30_official?_r=1&_t=ZN-93CkURqQ6A2" target="_blank" rel="noopener noreferrer">
+                                    <TiktokLogo />
+                                </a>
+                            </div>
                         </div>
-                        <div className="social-icon">
-                            <a href="https://www.instagram.com/sobrio30_official?igsh=M3A5MHB1MHh0YXQ2&utm_source=qr" target="_blank" rel="noopener noreferrer">
-                                <InstagramLogo />
-                            </a>
+
+                        <div className="footer-links">
+                            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                            <a href="/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</a>
+                            <a href="/termini-e-condizioni" target="_blank" rel="noopener noreferrer">Termini e Condizioni</a>
                         </div>
-                        <div className="social-icon">
-                            <a href="https://www.linkedin.com/company/sobrio30%C2%AE/" target="_blank" rel="noopener noreferrer">
-                                <LinkedinLogo />
-                            </a>
-                        </div>
-                        <div className="social-icon">
-                            <a href="https://www.tiktok.com/@sobrio30_official?_r=1&_t=ZN-93CkURqQ6A2" target="_blank" rel="noopener noreferrer">
-                                <TiktokLogo />
-                            </a>
-                        </div>
+
                     </div>
+
                 </div>
             </div>
         </footer>

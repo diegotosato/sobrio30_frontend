@@ -16,10 +16,10 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/reseller" element={<ResellerPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/termini-e-condizioni" element={<TermsConditions />} />
         </Route>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/termini-e-condizioni" element={<TermsConditions />} />
       </Routes>
     </Router>
   )

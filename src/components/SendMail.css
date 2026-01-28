@@ -80,6 +80,18 @@ form button:disabled {
     font-size: 0.9rem;
 }
 
+.checkbox a {
+    color: var(--light-red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.checkbox a:hover {
+    color: var(--dark-red);
+    text-decoration: underline;
+}
+
 .module-col {
     width: calc(50% - 10px);
     display: flex;
